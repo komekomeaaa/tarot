@@ -1,0 +1,213 @@
+/* =============================================
+   TAROT CARD COMPONENT
+   ============================================= */
+
+.tarot-card-container {
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tarot-card-container:hover {
+    transform: scale(1.02);
+}
+
+.tarot-card-container.size-sm {
+    width: 80px;
+    height: 130px;
+}
+
+.tarot-card-container.size-md {
+    width: 120px;
+    height: 195px;
+}
+
+.tarot-card-container.size-lg {
+    width: 160px;
+    height: 260px;
+}
+
+/* Flip Logic */
+.tarot-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.tarot-card-container.revealed .tarot-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Reversed card - rotate upside down */
+.tarot-card-container.revealed.reversed .tarot-card-front {
+    transform: rotateY(180deg) rotate(180deg);
+}
+
+.tarot-card-front,
+.tarot-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* =============================================
+   CARD BACK - 神秘的なデザイン
+   ============================================= */
+
+.tarot-card-back {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    border: 2px solid rgba(207, 169, 102, 0.6);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(124, 92, 191, 0.1);
+}
+
+.back-pattern {
+    width: 85%;
+    height: 85%;
+    border: 1px solid rgba(207, 169, 102, 0.3);
+    border-radius: 4px;
+    position: relative;
+
+    /* 幾何学模様 */
+    background:
+        linear-gradient(45deg, transparent 45%, rgba(207, 169, 102, 0.1) 45%, rgba(207, 169, 102, 0.1) 55%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(207, 169, 102, 0.1) 45%, rgba(207, 169, 102, 0.1) 55%, transparent 55%);
+    background-size: 20px 20px;
+}
+
+.back-pattern::before {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: rgba(207, 169, 102, 0.5);
+}
+
+/* =============================================
+   CARD FRONT
+   ============================================= */
+
+.tarot-card-front {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #f8f5ec 0%, #e8e2d6 100%);
+    border: 3px solid #cfa966;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    position: relative;
+}
+
+.card-top {
+    text-align: center;
+}
+
+.card-number {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #7c5cbf;
+    background: rgba(124, 92, 191, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.card-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-center h3 {
+    font-size: 0.8rem;
+    font-family: 'Noto Serif JP', serif;
+    color: #2a2a3e;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.suit-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.suit-wands {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.suit-cups {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.suit-swords {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.suit-pentacles {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.card-bottom {
+    text-align: center;
+}
+
+.card-keywords {
+    font-size: 0.65rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Major Arcana styling */
+.arcana-major .card-center h3 {
+    color: #4a2c7c;
+    font-weight: 600;
+}
+
+.arcana-major .card-number {
+    background: linear-gradient(135deg, #cfa966, #e8d5a9);
+    color: #2a2a3e;
+}
+
+/* Error state */
+.card-error {
+    font-size: 2rem;
+    color: #999;
+}
+
+/* =============================================
+   REVERSED INDICATOR
+   ============================================= */
+
+.tarot-card-container.revealed.reversed::after {
+    content: '逆位置';
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}

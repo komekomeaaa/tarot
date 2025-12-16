@@ -1,0 +1,560 @@
+/* =============================================
+   TAROT × 16 SIGILS - MYSTICAL DESIGN SYSTEM
+   ============================================= */
+
+/* CSS Variables */
+:root {
+  /* Colors - 神秘的なダークテーマ */
+  --color-bg-main: #0d0d12;
+  --color-bg-card: #141418;
+  --color-bg-glass: rgba(20, 20, 30, 0.85);
+
+  --color-text-main: #e8e2d6;
+  --color-text-muted: #8a8578;
+  --color-text-gold: #cfa966;
+
+  --color-accent-gold: #cfa966;
+  --color-accent-purple: #7c5cbf;
+  --color-accent-deep-purple: #4a2c7c;
+  --color-accent-mystical: #9b6bc4;
+
+  --color-gradient-1: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  --color-gradient-gold: linear-gradient(135deg, #cfa966 0%, #e8d5a9 50%, #b8956a 100%);
+  --color-gradient-card: linear-gradient(145deg, #1a1a2e 0%, #2c2148 100%);
+
+  /* Typography */
+  --font-serif: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+  --font-accent: 'Noto Sans JP', sans-serif;
+
+  /* Spacing & Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Effects */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(124, 92, 191, 0.1);
+  --shadow-glow: 0 0 30px rgba(207, 169, 102, 0.3);
+  --shadow-mystical: 0 0 60px rgba(124, 92, 191, 0.2);
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;600&display=swap');
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: 1.8;
+  min-height: 100vh;
+
+  /* 星空背景 */
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(207, 169, 102, 0.4), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 160px 100px, rgba(124, 92, 191, 0.3), transparent),
+    radial-gradient(1px 1px at 200px 60px, rgba(255, 255, 255, 0.2), transparent),
+    var(--color-gradient-1);
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(207, 169, 102, 0.2);
+  position: relative;
+}
+
+.main-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: var(--color-gradient-gold);
+}
+
+.main-header h1 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 20px rgba(207, 169, 102, 0.4);
+}
+
+.main-header .subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0.2em;
+}
+
+.page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  min-height: 80vh;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* =============================================
+   MYSTIC ELEMENTS
+   ============================================= */
+
+.mystic-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mystic-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-accent-gold);
+  letter-spacing: 0.1em;
+}
+
+.mystic-header .star {
+  color: var(--color-accent-mystical);
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+
+.intro-text {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+.sigil-badge {
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  background: var(--color-gradient-card);
+  border: 1px solid var(--color-accent-purple);
+  border-radius: var(--radius-lg);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.sigil-badge strong {
+  color: var(--color-accent-mystical);
+  font-weight: 600;
+}
+
+/* =============================================
+   PROGRESS BAR
+   ============================================= */
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-gradient-gold);
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* =============================================
+   QUESTION CARD (Onboarding)
+   ============================================= */
+
+.question-card {
+  background: var(--color-gradient-card);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(124, 92, 191, 0.3);
+  box-shadow: var(--shadow-mystical);
+  position: relative;
+  overflow: hidden;
+}
+
+.question-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-gradient-gold);
+}
+
+.question-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-btn {
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background: rgba(124, 92, 191, 0.2);
+  border-color: var(--color-accent-purple);
+  transform: translateX(5px);
+}
+
+.skip-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.skip-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.skip-btn:hover {
+  opacity: 1;
+  color: var(--color-text-main);
+}
+
+/* =============================================
+   INPUT FORM
+   ============================================= */
+
+.mystic-form {
+  background: var(--color-gradient-card);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(124, 92, 191, 0.2);
+  box-shadow: var(--shadow-card);
+}
+
+.mystic-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.label-text {
+  font-size: 0.95rem;
+  color: var(--color-text-gold);
+  font-weight: 500;
+}
+
+.mystic-form input,
+.mystic-form select,
+.mystic-form textarea {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-text-main);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.mystic-form input:focus,
+.mystic-form select:focus,
+.mystic-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 15px rgba(207, 169, 102, 0.2);
+}
+
+.mystic-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.stress-slider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.stress-slider input[type="range"] {
+  flex: 1;
+  height: 6px;
+  cursor: pointer;
+  background: linear-gradient(to right, var(--color-accent-purple), var(--color-accent-gold));
+  border-radius: 3px;
+  -webkit-appearance: none;
+}
+
+.stress-indicator {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-accent-gold);
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+.primary-btn,
+.secondary-btn {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.primary-btn {
+  background: var(--color-gradient-gold);
+  color: #111;
+  box-shadow: var(--shadow-glow);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(207, 169, 102, 0.5);
+}
+
+.mystic-btn {
+  width: 100%;
+  margin-top: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+  color: var(--color-text-main);
+}
+
+.secondary-btn:hover {
+  border-color: var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+
+/* =============================================
+   SPREAD SELECTION
+   ============================================= */
+
+.spread-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.spread-card {
+  padding: 2rem;
+  background: var(--color-gradient-card);
+  border: 1px solid rgba(124, 92, 191, 0.2);
+  border-radius: var(--radius-xl);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spread-card:hover {
+  border-color: var(--color-accent-gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+.spread-icon {
+  font-size: 2.5rem;
+}
+
+.spread-card h3 {
+  font-size: 1.2rem;
+  color: var(--color-accent-gold);
+  margin-bottom: 0.3rem;
+}
+
+.spread-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* =============================================
+   RESULT PAGE
+   ============================================= */
+
+.result-page .instruction {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.spread-section {
+  margin-bottom: 3rem;
+}
+
+.interpretation-section {
+  background: var(--color-gradient-card);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(124, 92, 191, 0.2);
+  box-shadow: var(--shadow-card);
+}
+
+.summary-box,
+.advice-box {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-box h3,
+.advice-box h3,
+.position-details h3 {
+  color: var(--color-accent-gold);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reading-item {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent-purple);
+}
+
+.reading-item h4 {
+  font-size: 0.9rem;
+  color: var(--color-accent-mystical);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.reading-item p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.advice-box {
+  border-bottom: none;
+  background: rgba(207, 169, 102, 0.05);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 600px) {
+  .main-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .page-container {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .question-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .spread-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

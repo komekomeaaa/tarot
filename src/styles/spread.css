@@ -1,0 +1,146 @@
+/* =============================================
+   SPREAD LAYOUTS
+   ============================================= */
+
+.spread-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.slot-label {
+    margin-top: 28px;
+    font-size: 0.75rem;
+    color: rgba(207, 169, 102, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* =============================================
+   ONE CARD SPREAD
+   ============================================= */
+
+.spread-container.one-card {
+    min-height: 350px;
+    justify-content: center;
+}
+
+.one-card .tarot-card-container {
+    width: 150px;
+    height: 245px;
+}
+
+/* =============================================
+   THREE CARD SPREAD
+   ============================================= */
+
+.spread-container.three-card {
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+.three-card .slot-label {
+    font-size: 0.8rem;
+}
+
+/* =============================================
+   CELTIC CROSS SPREAD
+   ============================================= */
+
+.spread-container.celtic-cross {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: start;
+    padding: 20px;
+}
+
+.center-cross {
+    position: relative;
+    width: 120px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-cross .slot-present {
+    z-index: 1;
+}
+
+.crossing-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    z-index: 2;
+}
+
+.surrounding {
+    display: grid;
+    grid-template-areas:
+        ". conscious ."
+        "past . near_future"
+        ". foundation .";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+}
+
+.slot-foundation {
+    grid-area: foundation;
+}
+
+.slot-past {
+    grid-area: past;
+}
+
+.slot-conscious {
+    grid-area: conscious;
+}
+
+.slot-near_future {
+    grid-area: near_future;
+}
+
+.staff {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 600px) {
+    .spread-container.celtic-cross {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .staff {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .tarot-card-container.size-sm {
+        width: 60px;
+        height: 98px;
+    }
+}

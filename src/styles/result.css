@@ -1,0 +1,276 @@
+/* 結果ページ専用スタイル */
+
+.result-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.spread-title {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--color-text-gold);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.1em;
+}
+
+.instruction {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* 解釈セクション */
+.interpretation-section {
+    margin-top: 2rem;
+}
+
+/* 共通ボックススタイル */
+.oracle-box,
+.detail-box,
+.advice-box,
+.ritual-box,
+.sign-box,
+.type-lens-box,
+.safety-box {
+    background: var(--color-bg-glass);
+    border: 1px solid var(--color-accent-deep-purple);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    backdrop-filter: blur(10px);
+}
+
+.oracle-box h3,
+.detail-box h3,
+.advice-box h3,
+.ritual-box h3,
+.sign-box h3,
+.position-details h3 {
+    font-size: 1rem;
+    color: var(--color-text-gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+}
+
+.oracle-box h3 .icon,
+.detail-box h3 .icon,
+.advice-box h3 .icon,
+.ritual-box h3 .icon,
+.sign-box h3 .icon,
+.position-details h3 .icon {
+    font-size: 1.1rem;
+}
+
+/* 総合結論 */
+.oracle-box {
+    border-color: var(--color-accent-gold);
+    background: linear-gradient(135deg,
+            rgba(207, 169, 102, 0.1) 0%,
+            rgba(20, 20, 30, 0.9) 100%);
+}
+
+.thesis-text {
+    color: var(--color-text-main);
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+/* ケルト十字専用セクション */
+.flow-box {
+    border-left: 3px solid #6495ed;
+}
+
+.conflict-box {
+    border-left: 3px solid #dc143c;
+}
+
+.lever-box {
+    border-left: 3px solid #32cd32;
+}
+
+/* 各位置詳細 */
+.position-details {
+    background: var(--color-bg-glass);
+    border: 1px solid var(--color-accent-deep-purple);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.reading-item {
+    border-bottom: 1px solid rgba(207, 169, 102, 0.2);
+    padding: 0.75rem 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.reading-item:last-child {
+    border-bottom: none;
+}
+
+.reading-item:hover {
+    background: rgba(207, 169, 102, 0.05);
+}
+
+.reading-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reading-header h4 {
+    font-size: 0.95rem;
+    color: var(--color-accent-mystical);
+    margin: 0;
+    font-weight: 600;
+}
+
+.card-name {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    flex: 1;
+}
+
+.toggle-icon {
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+}
+
+.reading-text {
+    margin-top: 0.75rem;
+    color: var(--color-text-main);
+    line-height: 1.7;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-accent-deep-purple);
+}
+
+/* 助言 */
+.advice-box {
+    border-color: var(--color-accent-mystical);
+}
+
+.advice-box p {
+    color: var(--color-text-main);
+    line-height: 1.7;
+}
+
+/* 今日の一手 */
+.ritual-box {
+    background: linear-gradient(135deg,
+            rgba(124, 92, 191, 0.15) 0%,
+            rgba(20, 20, 30, 0.9) 100%);
+    border-color: var(--color-accent-purple);
+}
+
+.ritual-box p {
+    color: var(--color-text-main);
+    line-height: 1.7;
+}
+
+/* 確認ポイント */
+.sign-box {
+    background: rgba(100, 149, 237, 0.1);
+    border-color: #6495ed;
+}
+
+.sign-box p {
+    color: var(--color-text-main);
+    line-height: 1.7;
+}
+
+/* タイプ補足 */
+.type-lens-box {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.type-lens {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* 安全注意 */
+.safety-box {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+}
+
+.safety-line {
+    color: #ffc107;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* アクションボタン */
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.actions .primary-btn,
+.actions .secondary-btn {
+    min-width: 180px;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--color-accent-gold);
+    color: var(--color-accent-gold);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: rgba(207, 169, 102, 0.1);
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+    .result-page {
+        padding: 0 1rem;
+    }
+
+    .oracle-box,
+    .detail-box,
+    .advice-box,
+    .ritual-box,
+    .sign-box,
+    .position-details {
+        padding: 1rem;
+    }
+
+    .reading-header {
+        flex-wrap: wrap;
+    }
+
+    .card-name {
+        flex-basis: 100%;
+        margin-top: 0.25rem;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions .primary-btn,
+    .actions .secondary-btn {
+        width: 100%;
+    }
+}
