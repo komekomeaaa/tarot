@@ -29,7 +29,7 @@ export const ReadingVerification: React.FC = () => {
             deadline: 'week',
             stressLevel: 3,
             goal: 'Happiness',
-            sigilCode: 'VIEQ'
+            sigilType: 'VIEQ'
         };
 
         const r = generateReading(result.spreadId, result.cards, ctx);

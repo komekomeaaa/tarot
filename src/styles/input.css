@@ -1,0 +1,218 @@
+/* Input Page - 相談入力ページ */
+
+.input-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 占い師からの温かいメッセージ */
+.fortune-teller-message {
+    text-align: center;
+    margin: 2rem auto 3rem;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg,
+            rgba(207, 169, 102, 0.1) 0%,
+            rgba(124, 92, 191, 0.1) 50%,
+            rgba(207, 169, 102, 0.1) 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(207, 169, 102, 0.25);
+    box-shadow: 0 8px 32px rgba(207, 169, 102, 0.15);
+}
+
+.wisdom-text {
+    color: var(--color-text-gold);
+    font-size: 1.15rem;
+    line-height: 2;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+.comfort-text {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.9;
+    font-style: italic;
+}
+
+/* シジル表示 */
+.sigil-display {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(124, 92, 191, 0.08);
+    border-radius: 12px;
+    border: 1px solid var(--color-accent-mystical);
+}
+
+.sigil-message {
+    color: var(--color-accent-mystical);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sigil-type {
+    color: var(--color-accent-gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    font-family: var(--font-display);
+}
+
+/* フォーム要素 */
+.input-form {
+    background: var(--color-bg-glass);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--color-accent-deep-purple);
+    backdrop-filter: blur(10px);
+}
+
+.input-form label {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.label-text {
+    display: block;
+    color: var(--color-text-gold);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.label-text.gentle {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+}
+
+/* ヘルパーテキスト */
+.helper-text {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* やさしいフォーム要素 */
+.gentle-select,
+.gentle-input,
+.gentle-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(20, 20, 30, 0.6);
+    border: 2px solid rgba(207, 169, 102, 0.2);
+    border-radius: 10px;
+    color: var(--color-text-main);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    transition: all 0.3s ease;
+}
+
+.gentle-select:focus,
+.gentle-input:focus,
+.gentle-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-gold);
+    background: rgba(207, 169, 102, 0.05);
+    box-shadow: 0 0 0 3px rgba(207, 169, 102, 0.1);
+}
+
+.gentle-textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+/* スライダー */
+.stress-slider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.75rem 0;
+}
+
+.slider-label {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.gentle-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,
+            var(--color-accent-deep-purple) 0%,
+            var(--color-accent-mystical) 50%,
+            var(--color-accent-gold) 100%);
+    outline: none;
+    appearance: none;
+}
+
+.gentle-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-accent-gold);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(207, 169, 102, 0.5);
+    transition: all 0.2s ease;
+}
+
+.gentle-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(207, 169, 102, 0.7);
+}
+
+.stress-indicator {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.stress-indicator .star {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.stress-indicator .star.filled {
+    color: var(--color-accent-gold);
+}
+
+/* 送信エリア */
+.submit-container {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(207, 169, 102, 0.2);
+}
+
+.encouragement-text {
+    color: var(--color-accent-mystical);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* レスポンシブ */
+@media (max-width: 700px) {
+    .fortune-teller-message {
+        padding: 2rem 1.5rem;
+    }
+
+    .wisdom-text {
+        font-size: 1.05rem;
+    }
+
+    .comfort-text {
+        font-size: 0.95rem;
+    }
+
+    .input-form {
+        padding: 1.5rem;
+    }
+}

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, type ReactNode } from 'reac
 import type { SigilCode, UserContext, DrawResult } from '../types';
 
 interface TarotState {
-    sigilCode: SigilCode | null;
+    sigilType: SigilCode | null;
     userContext: UserContext | null;
     lastDraw: DrawResult | null;
     setSigilCode: (code: SigilCode) => void;
@@ -13,7 +13,7 @@ interface TarotState {
 const TarotContext = createContext<TarotState | undefined>(undefined);
 
 export const TarotProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [sigilCode, setSigilCode] = useState<SigilCode | null>(null);
+    const [sigilType, setSigilCode] = useState<SigilCode | null>(null);
     const [userContext, setUserContext] = useState<UserContext | null>(null);
     const [lastDraw, setLastDraw] = useState<DrawResult | null>(null);
 
@@ -21,7 +21,7 @@ export const TarotProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
     return (
         <TarotContext.Provider value={{
-            sigilCode,
+            sigilType,
             userContext,
             lastDraw,
             setSigilCode,

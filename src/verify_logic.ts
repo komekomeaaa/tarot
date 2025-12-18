@@ -9,7 +9,7 @@ const mockContext: UserContext = {
     deadline: 'week',
     stressLevel: 4,
     goal: 'Reconnect',
-    sigilCode: 'VIEQ'
+    sigilType: 'VIEQ'
 };
 
 // Test Draw (3 cards)

@@ -5,6 +5,14 @@ import type { DrawnCard, CardDefinition, UserContext, SpreadType } from '../type
 import { CARDS } from '../data/cards';
 import { POSITION_TEMPLATES, CARD_MODIFIERS } from '../data/templates';
 import {
+    calculateSigilSuitSynergy,
+    adjustByReversedRatio,
+    formatSynergyMessage
+} from './synergy';
+import {
+    getCategorySigilCardTemplate
+} from '../data/structured-templates';
+import {
     CATEGORY_TEMPLATES,
     SIGN_LINES,
     detectSafetyNeeded,
@@ -37,6 +45,7 @@ export interface GeneratedReading {
     signLine: string;          // SIGN_LINE
     safetyLine?: string;       // SAFETY_LINE（必要時のみ）
     typeLens: string;          // TYPE_LENS
+    synergyInsight?: string;   // Phase 2: シジル×スート相互作用
 }
 
 // カードIDからカード定義を取得
@@ -271,7 +280,7 @@ export function generateReading(
     const analysis = analyzeSpread(cards);
     const category = userContext.category as CategoryType;
     const deadline = userContext.deadline as DeadlineType;
-    const sigilCode = userContext.sigilCode || 'VIEQ';
+    const sigilType = userContext.sigilType || 'VIEQ';
 
     // 各位置の解釈文
     const positionReadings = cards.map(drawn => ({
@@ -307,12 +316,52 @@ export function generateReading(
     const safetyLine = detectSafetyNeeded(category, userContext.situation + ' ' + userContext.goal) || undefined;
 
     // TYPE_LENS
-    const axisDominance = getAxisDominance(sigilCode);
-    let typeLens = getTypeLens(sigilCode);
+    const axisDominance = getAxisDominance(sigilType);
+    let typeLens = getTypeLens(sigilType);
 
     // タイプに応じて強調を調整
     if (axisDominance.arcanaFocus === 'aether' && analysis.dominantArcana === 'major') {
         typeLens = `あなたのシジルは大アルカナとの相性が良く、象徴から全体像を掴みやすい配置です。${typeLens}`;
+    }
+
+    // Phase 2: シジル×スート相互作用の計算
+    let synergyInsight: string | undefined;
+
+    // シジル×スート偏りの相互作用
+    const suitSynergy = calculateSigilSuitSynergy(sigilType, analysis.suitCounts);
+    if (suitSynergy) {
+        synergyInsight = formatSynergyMessage(suitSynergy);
+    }
+
+    // 逆位置比率による調整
+    const reversedAdjustment = adjustByReversedRatio(sigilType, analysis.reversedRatio);
+    if (reversedAdjustment) {
+        synergyInsight = synergyInsight
+            ? `${synergyInsight}\n\n${reversedAdjustment}`
+            : reversedAdjustment;
+    }
+
+    // Phase 3: カテゴリ × シジル × タロット 三位一体（ホットパス）
+    // 恋愛カテゴリでスート偏りがある場合、専用テンプレートを適用
+    if (category === 'love' && analysis.dominantSuit && sigilType) {
+        const sigilChar = sigilType[0];
+        const categoryTemplate = getCategorySigilCardTemplate(category, sigilChar, analysis.dominantSuit);
+
+        if (categoryTemplate) {
+            // 助言を専用テンプレートで上書き
+            if (categoryTemplate.advice && categoryTemplate.strength >= 0.8) {
+                // strengthが高い場合のみ適用
+                if (synergyInsight) {
+                    synergyInsight += `\n\n【恋愛特化アドバイス】\n${categoryTemplate.advice}`;
+                } else {
+                    synergyInsight = `【恋愛特化アドバイス】\n${categoryTemplate.advice}`;
+                }
+            }
+
+            // リチュアルも専用テンプレートで上書き可能
+            // （ただし既存のselectRitualも良質なので、両方表示も検討）
+            // actionRitual = categoryTemplate.ritual;
+        }
     }
 
     return {
@@ -322,7 +371,8 @@ export function generateReading(
         actionRitual,
         signLine,
         safetyLine,
-        typeLens
+        typeLens,
+        synergyInsight
     };
 }
 

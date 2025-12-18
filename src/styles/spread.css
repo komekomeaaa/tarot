@@ -29,6 +29,153 @@
 }
 
 /* =============================================
+   SPREAD SELECTION PAGE
+   ============================================= */
+
+.spread-page .header-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.spread-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.spread-option-container {
+    width: 100%;
+}
+
+.spread-card {
+    width: 100%;
+    padding: 1.5rem;
+    background: var(--color-bg-glass);
+    border: 2px solid rgba(207, 169, 102, 0.3);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.spread-card:hover {
+    border-color: var(--color-accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(207, 169, 102, 0.3);
+}
+
+.spread-card.selected {
+    border-color: var(--color-accent-gold);
+    background: linear-gradient(135deg,
+            rgba(207, 169, 102, 0.1) 0%,
+            rgba(124, 92, 191, 0.1) 100%);
+}
+
+.spread-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.spread-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-gold);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+}
+
+.spread-card .tagline {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.learn-more {
+    display: inline-block;
+    color: var(--color-accent-mystical);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* スプレッドガイド */
+.spread-guide {
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background: rgba(20, 20, 30, 0.8);
+    border: 2px solid rgba(207, 169, 102, 0.2);
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.guide-section {
+    margin-bottom: 2rem;
+}
+
+.guide-section:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.guide-section h4 {
+    color: var(--color-accent-gold);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.guide-section .description,
+.guide-section .guidance {
+    color: var(--color-text-main);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.positions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.positions-list li {
+    color: var(--color-text-main);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: rgba(207, 169, 102, 0.05);
+    border-left: 3px solid var(--color-accent-gold);
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.reversed-info {
+    background: linear-gradient(135deg,
+            rgba(124, 92, 191, 0.1) 0%,
+            rgba(207, 169, 102, 0.05) 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(124, 92, 191, 0.3);
+}
+
+.reversed-meaning {
+    color: var(--color-text-main);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.draw-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* =============================================
    ONE CARD SPREAD
    ============================================= */
 
@@ -126,6 +273,21 @@
    RESPONSIVE
    ============================================= */
 
+@media (max-width: 800px) {
+    .spread-guide {
+        padding: 1.5rem;
+    }
+
+    .guide-section h4 {
+        font-size: 1rem;
+    }
+
+    .positions-list li {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+
 @media (max-width: 600px) {
     .spread-container.celtic-cross {
         grid-template-columns: 1fr;
@@ -140,7 +302,19 @@
     }
 
     .tarot-card-container.size-sm {
-        width: 60px;
-        height: 98px;
+        width: 90px;
+        height: 147px;
+    }
+
+    .spread-card {
+        padding: 1.25rem;
+    }
+
+    .spread-icon {
+        font-size: 2.5rem;
+    }
+
+    .spread-guide {
+        padding: 1.25rem;
     }
 }

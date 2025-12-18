@@ -1,0 +1,26 @@
+{
+    "name": "tarot-infra",
+    "version": "1.0.0",
+    "description": "AWS CDK infrastructure for Tarot App",
+    "main": "lib/tarot-stack.js",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "cdk": "cdk",
+        "deploy": "cdk deploy",
+        "diff": "cdk diff",
+        "synth": "cdk synth"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "aws-cdk": "^2.115.0",
+        "typescript": "^5.3.0"
+    },
+    "dependencies": {
+        "aws-cdk-lib": "^2.115.0",
+        "constructs": "^10.3.0"
+    }
+}
