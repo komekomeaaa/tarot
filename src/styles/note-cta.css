@@ -1,0 +1,60 @@
+/* note誘導CTA */
+.note-link-cta {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 600px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-link-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-message {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.note-link-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: white;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-link-button:hover {
+    background: #f8f9ff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .note-link-cta {
+        margin: 1.5rem 1rem;
+        padding: 1.25rem;
+    }
+
+    .cta-message {
+        font-size: 1rem;
+    }
+
+    .note-link-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}

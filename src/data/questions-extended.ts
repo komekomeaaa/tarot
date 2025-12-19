@@ -73,12 +73,12 @@ export const EXTENDED_QUESTIONS: DiagnosisQuestion[] = [
 
 /**
  * 5択の選択肢（UI表示用）
- * 占い師の視点で: より共鳴・響きを重視した表現
  */
 export const LIKERT_OPTIONS = [
-    { label: '深く共鳴する', score: 2, emoji: '✨' },
-    { label: '共鳴する', score: 1, emoji: '💫' },
-    { label: '中立', score: 0, emoji: '🌙' },
-    { label: '違和感がある', score: -1, emoji: '🌑' },
-    { label: '全く違う', score: -2, emoji: '❌' }
+    { label: '強く思う', score: 2, emoji: '✨' },
+    { label: 'やや思う', score: 1, emoji: '💫' },
+    { label: 'わからない', score: 0, emoji: '🌙' },
+    { label: 'やや思わない', score: -1, emoji: '🌑' },
+    { label: '強く思わない', score: -2, emoji: '❌' }
 ];
+

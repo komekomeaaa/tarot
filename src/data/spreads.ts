@@ -1,22 +1,7 @@
 import type { SpreadDefinition } from '../types';
 
+// ケルト十字のみ
 export const SPREADS: SpreadDefinition[] = [
-    {
-        id: 'one_card',
-        name: 'One Card Oracle',
-        positions: [
-            { id: 'theme', name: 'Theme', description: '今日のテーマ (Theme of the day)' }
-        ]
-    },
-    {
-        id: 'three_card',
-        name: 'Three Card Spread',
-        positions: [
-            { id: 'situation', name: 'Situation', description: '現状 (Current Situation)' },
-            { id: 'obstacle', name: 'Obstacle', description: '障害 (Obstacle / Challenge)' },
-            { id: 'advice', name: 'Advice', description: '助言 (Advice)' }
-        ]
-    },
     {
         id: 'celtic_cross',
         name: 'Celtic Cross',

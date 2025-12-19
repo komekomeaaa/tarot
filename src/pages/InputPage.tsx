@@ -10,7 +10,6 @@ export const InputPage: React.FC = () => {
 
     const [category, setCategory] = useState<UserContext['category']>('love');
     const [situation, setSituation] = useState('');
-    const [deadline, setDeadline] = useState<UserContext['deadline']>('week');
     const [stressLevel, setStressLevel] = useState(3);
     const [goal, setGoal] = useState('');
 
@@ -19,7 +18,7 @@ export const InputPage: React.FC = () => {
         const ctx: UserContext = {
             category,
             situation,
-            deadline,
+            deadline: 'week', // デフォルト値
             stressLevel: Number(stressLevel),
             goal,
             sigilType: sigilType || ''
@@ -56,7 +55,7 @@ export const InputPage: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="input-form mystic-form">
                 <label>
-                    <span className="label-text gentle">🌸 心の風は、どこから吹いていますか？</span>
+                    <span className="label-text gentle">🌸 いまの心の状態を、ひと言で教えてください</span>
                     <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value as UserContext['category'])}
@@ -74,7 +73,8 @@ export const InputPage: React.FC = () => {
                 <label>
                     <span className="label-text gentle">🌊 今、どのような風景が広がっていますか？</span>
                     <p className="helper-text">
-                        あなたの心に映る景色を、ありのままに教えてください
+                        あなたの心に映る景色を、ありのままに教えてください<br />
+                        <span className="focus-tip">💡 質問を1つに絞るほど、答えが鋭くなります</span>
                     </p>
                     <textarea
                         value={situation}
@@ -87,24 +87,7 @@ export const InputPage: React.FC = () => {
                 </label>
 
                 <label>
-                    <span className="label-text gentle">⏰ いつまでに、光が欲しいですか？</span>
-                    <select
-                        value={deadline}
-                        onChange={e => setDeadline(e.target.value as UserContext['deadline'])}
-                        className="gentle-select"
-                    >
-                        <option value="today">今日、今すぐ</option>
-                        <option value="week">この一週間のうちに</option>
-                        <option value="month">今月中には</option>
-                        <option value="longer">焦らず、じっくりと</option>
-                    </select>
-                </label>
-
-                <label>
-                    <span className="label-text gentle">💫 この想いの重さを教えてください</span>
-                    <p className="helper-text">
-                        心の重さには、優劣はありません。素直な気持ちで
-                    </p>
+                    <span className="label-text gentle">💫 いまの重さを教えてください（優劣はありません）</span>
                     <div className="stress-slider">
                         <span className="slider-label">そっと</span>
                         <input
@@ -127,7 +110,7 @@ export const InputPage: React.FC = () => {
                 </label>
 
                 <label>
-                    <span className="label-text gentle">🌟 どのような明日を願っていますか？</span>
+                    <span className="label-text gentle">🌟 どのような未来を願っていますか？</span>
                     <p className="helper-text">
                         あなたの心が本当に望む未来を、描いてみてください
                     </p>
@@ -142,9 +125,6 @@ export const InputPage: React.FC = () => {
                 </label>
 
                 <div className="submit-container">
-                    <p className="encouragement-text">
-                        準備ができました。カードたちが、あなたを待っています。
-                    </p>
                     <button type="submit" className="primary-btn mystic-btn warm-glow">
                         ✨ カードたちに聞いてみる ✨
                     </button>

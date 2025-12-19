@@ -318,3 +318,195 @@
         padding: 1.25rem;
     }
 }
+
+/* 順番めくりガイド */
+.order-guide {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: rgba(207, 169, 102, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(207, 169, 102, 0.3);
+}
+
+.order-guide p {
+    color: var(--color-accent-gold);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.order-guide.complete {
+    background: rgba(100, 200, 100, 0.1);
+    border-color: rgba(100, 200, 100, 0.3);
+}
+
+.order-guide.complete p {
+    color: #7dcea0;
+}
+
+/* 次にめくるカード */
+.card-slot.next-to-reveal {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 5px rgba(207, 169, 102, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgba(207, 169, 102, 0.8));
+    }
+}
+
+/* ロックされたカード（まだめくれない） */
+.card-slot.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.card-slot.locked .tarot-card-container {
+    pointer-events: none;
+}
+
+/* benefits-title */
+.benefits-title {
+    margin-top: 1.5rem;
+}
+
+/* カード画像ラッパー（位置合わせ用） */
+.card-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* カードキーワードポップアップ */
+.card-keyword-popup {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(207, 169, 102, 0.95);
+    padding: 6px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+    animation: fadeIn 0.4s ease-out;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.keyword-text {
+    color: #1a1a2e;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+/* GPU高速化 */
+.tarot-card-container {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 最後にめくったカードのメッセージ */
+.last-card-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg,
+            rgba(207, 169, 102, 0.15) 0%,
+            rgba(124, 92, 191, 0.15) 50%,
+            rgba(207, 169, 102, 0.15) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(207, 169, 102, 0.3);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.card-reveal-title {
+    color: var(--color-accent-gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-reveal-name {
+    color: var(--color-text-main);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-display);
+}
+
+.card-reveal-keywords {
+    color: var(--color-accent-mystical);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* カードスロットの調整 */
+.card-slot {
+    position: relative;
+    padding-bottom: 40px;
+    /* キーワード用のスペース */
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+    .last-card-message {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-reveal-title {
+        font-size: 0.95rem;
+    }
+
+    .card-reveal-name {
+        font-size: 1.1rem;
+    }
+
+    .card-reveal-keywords {
+        font-size: 0.9rem;
+    }
+
+    .card-keyword-popup {
+        bottom: -28px;
+        padding: 3px 8px;
+    }
+
+    .keyword-text {
+        font-size: 0.7rem;
+    }
+}

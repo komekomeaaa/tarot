@@ -340,14 +340,14 @@ export const ResultPage: React.FC = () => {
             )}
 
             {/* Section 4: Type Lens */}
-            {currentSection >= 4 && !isCelticCross && (
+            {currentSection >= 4 && (
                 <section className="interpretation-section fade-in">
                     <h3 className="section-title">✨ あなたらしさの輝き ✨</h3>
                     <p className="lens-text">{reading.typeLens}</p>
                 </section>
             )}
 
-            {currentSection >= 4 && currentSection < 5 && !isCelticCross && reading.synergyInsight && (
+            {currentSection >= 4 && currentSection < 5 && reading.synergyInsight && (
                 <div className="next-button-container">
                     <button onClick={handleNext} className="next-btn mystic-btn warm-glow">
                         💖 最後の贈り物を受け取る
@@ -355,8 +355,8 @@ export const ResultPage: React.FC = () => {
                 </div>
             )}
 
-            {/* Section 5: Synergy */}
-            {currentSection >= 5 && !isCelticCross && reading.synergyInsight && (
+            {/* Section 5: Synergy & Note Link */}
+            {currentSection >= 5 && reading.synergyInsight && (
                 <section className="interpretation-section synergy-section fade-in">
                     <h3 className="section-title">💖 あなただけへの言葉 💖</h3>
                     <p className="synergy-text">{reading.synergyInsight}</p>
@@ -370,6 +370,29 @@ export const ResultPage: React.FC = () => {
                         <p className="blessing-emoji">✨🌟💖🌟✨</p>
                         <p className="hope-message">
                             あなたの未来は、光に満ちています。
+                        </p>
+                    </div>
+
+                    {/* noteへの導線 */}
+                    <div className="note-link-container" style={{ marginTop: '2rem', textAlign: 'center' }}>
+                        <a
+                            href="https://note.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="primary-btn mystic-btn warm-glow"
+                            style={{
+                                display: 'inline-block',
+                                textDecoration: 'none',
+                                padding: '1.2rem 2rem',
+                                fontSize: '1.1rem',
+                                background: 'linear-gradient(135deg, #2d3436 0%, #000000 100%)',
+                                border: '1px solid rgba(255,255,255,0.2)'
+                            }}
+                        >
+                            🔮 あなたのタイプの「来月の運勢」を見る (note)
+                        </a>
+                        <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.8 }}>
+                            ※より詳細な運勢とアドバイスをお届けします
                         </p>
                     </div>
                 </section>

@@ -22,6 +22,7 @@ import {
 } from '../data/category_templates';
 import { selectRitual } from '../data/rituals';
 import { getTypeLens, getAxisDominance } from '../data/sigil_types';
+import { getLensMessage } from './lens';
 
 // 解析結果
 export interface ReadingAnalysis {
@@ -322,6 +323,15 @@ export function generateReading(
     // タイプに応じて強調を調整
     if (axisDominance.arcanaFocus === 'aether' && analysis.dominantArcana === 'major') {
         typeLens = `あなたのシジルは大アルカナとの相性が良く、象徴から全体像を掴みやすい配置です。${typeLens}`;
+    }
+
+    // Lens Logic統合: 象徴的なカード（Adviceなど）に対する補正メッセージを取得
+    const mainCard = cards.find(c => c.positionId === 'advice') || cards[0]; // Advice位置、なければ最初のカード
+    if (mainCard) {
+        const lensMsg = getLensMessage(sigilType, mainCard);
+        if (lensMsg) {
+            typeLens += `\n\n【${sigilType}の視点】\n${lensMsg}`;
+        }
     }
 
     // Phase 2: シジル×スート相互作用の計算
