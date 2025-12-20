@@ -376,7 +376,7 @@ export const ResultPage: React.FC = () => {
                     {/* noteへの導線 */}
                     <div className="note-link-container" style={{ marginTop: '2rem', textAlign: 'center' }}>
                         <a
-                            href="https://note.com"
+                            href="https://note.com/baba_yaga_one"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="primary-btn mystic-btn warm-glow"
