@@ -13,6 +13,29 @@ export const InputPage: React.FC = () => {
     const [stressLevel, setStressLevel] = useState(3);
     const [goal, setGoal] = useState('');
 
+    const [isLimited, setIsLimited] = useState(false);
+    const [nextAvailableDate, setNextAvailableDate] = useState('');
+
+    // マウント時に月一制限をチェック
+    React.useEffect(() => {
+        const lastReading = localStorage.getItem('tarot_last_reading_time');
+        if (lastReading) {
+            const lastDate = new Date(lastReading);
+            const now = new Date();
+
+            // 同じ月かどうか判定
+            if (lastDate.getFullYear() === now.getFullYear() &&
+                lastDate.getMonth() === now.getMonth()) {
+
+                setIsLimited(true);
+
+                // 来月の1日を計算
+                const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+                setNextAvailableDate(`${nextMonth.getMonth() + 1}月1日`);
+            }
+        }
+    }, []);
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const ctx: UserContext = {
@@ -26,6 +49,43 @@ export const InputPage: React.FC = () => {
         setUserContext(ctx);
         navigate('/select-spread');
     };
+
+    if (isLimited) {
+        return (
+            <div className="page-container input-page">
+                <div className="mystic-header">
+                    <h2>🌿 今月の運勢は受け取り済みです 🌿</h2>
+                </div>
+                <div className="fortune-teller-message" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
+                    <p className="wisdom-text">
+                        カードの声は、ひと月に一度だけ。<br />
+                        今は受け取った言葉を胸に、日々を過ごす時です。
+                    </p>
+                    <p className="comfort-text" style={{ marginTop: '2rem' }}>
+                        次の運勢は <strong>{nextAvailableDate}</strong> から受け取れます。<br />
+                        あなたの歩む道が、光に照らされていますように。
+                    </p>
+
+                    <div style={{ marginTop: '3rem' }}>
+                        <button
+                            onClick={() => navigate('/result')}
+                            className="secondary-btn"
+                            style={{
+                                background: 'transparent',
+                                border: '1px solid var(--color-accent-gold)',
+                                color: 'var(--color-text-gold)',
+                                padding: '1rem 2rem',
+                                borderRadius: '8px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            📜 先回の結果を見直す
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="page-container input-page">

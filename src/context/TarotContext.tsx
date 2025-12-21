@@ -13,11 +13,43 @@ interface TarotState {
 const TarotContext = createContext<TarotState | undefined>(undefined);
 
 export const TarotProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [sigilType, setSigilCode] = useState<SigilCode | null>(null);
-    const [userContext, setUserContext] = useState<UserContext | null>(null);
-    const [lastDraw, setLastDraw] = useState<DrawResult | null>(null);
+    // Initialize from localStorage
+    const [sigilType, setSigilCodeState] = useState<SigilCode | null>(() => {
+        try {
+            const saved = localStorage.getItem('tarot_sigil_type');
+            return saved ? JSON.parse(saved) : null;
+        } catch { return null; }
+    });
 
-    // Load from local storage on mount? (Optional for MVP)
+    const [userContext, setUserContextState] = useState<UserContext | null>(() => {
+        try {
+            const saved = localStorage.getItem('tarot_user_context');
+            return saved ? JSON.parse(saved) : null;
+        } catch { return null; }
+    });
+
+    const [lastDraw, setLastDrawState] = useState<DrawResult | null>(() => {
+        try {
+            const saved = localStorage.getItem('tarot_last_draw');
+            return saved ? JSON.parse(saved) : null;
+        } catch { return null; }
+    });
+
+    // Wrappers to update both state and localStorage
+    const setSigilCode = (code: SigilCode) => {
+        setSigilCodeState(code);
+        localStorage.setItem('tarot_sigil_type', JSON.stringify(code));
+    };
+
+    const setUserContext = (ctx: UserContext) => {
+        setUserContextState(ctx);
+        localStorage.setItem('tarot_user_context', JSON.stringify(ctx));
+    };
+
+    const setLastDraw = (draw: DrawResult) => {
+        setLastDrawState(draw);
+        localStorage.setItem('tarot_last_draw', JSON.stringify(draw));
+    };
 
     return (
         <TarotContext.Provider value={{

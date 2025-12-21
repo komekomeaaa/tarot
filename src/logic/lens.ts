@@ -140,13 +140,7 @@ const LENS_RULES: Record<string, LensRule[]> = {
     ]
 };
 
-// デフォルトルール（該当なしの場合）
-const DEFAULT_RULES: LensRule[] = [
-    {
-        condition: (c) => c.arcana === 'major',
-        messageTemplate: "これは大きな転換点です。日常の視点ではなく、人生のテーマとして捉えてください。"
-    }
-];
+
 
 /**
  * Lensメッセージを取得

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTarot } from '../context/TarotContext';
 import { SpreadLayout } from '../components/SpreadLayout';
@@ -30,6 +30,14 @@ export const ResultPage: React.FC = () => {
     const [currentSection, setCurrentSection] = useState(0);
     const [revealedCards, setRevealedCards] = useState<Set<string>>(new Set());
 
+    // 4. マウント時にページトップへスクロール & 実施日時を記録
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        // 占いが完了した（結果を見た）日時を記録
+        // これにより、InputPageで「今月の占い済み」チェックを行う
+        localStorage.setItem('tarot_last_reading_time', new Date().toISOString());
+    }, []);
     const reading = useMemo(() => {
         if (!lastDraw || !userContext) return null;
         const ctx = { ...userContext, sigilType: sigilType || 'VIEQ' };
@@ -182,9 +190,17 @@ export const ResultPage: React.FC = () => {
 
             {currentSection >= 0 && (
                 <div className="next-button-container">
-                    <button onClick={handleNext} className="next-btn mystic-btn warm-glow">
-                        ✨ メッセージを受け取る
-                    </button>
+                    {allCardsRevealed ? (
+                        <button onClick={handleNext} className="next-btn mystic-btn warm-glow">
+                            ✨ メッセージを受け取る
+                        </button>
+                    ) : (
+                        <div className="cards-not-revealed-message">
+                            <p className="gentle-reminder">
+                                カードをタップして、すべてめくってください
+                            </p>
+                        </div>
+                    )}
                 </div>
             )}
 
@@ -331,7 +347,7 @@ export const ResultPage: React.FC = () => {
                 </>
             )}
 
-            {currentSection >= 3 && currentSection < 4 && !isCelticCross && (
+            {currentSection >= 3 && currentSection < 4 && (
                 <div className="next-button-container">
                     <button onClick={handleNext} className="next-btn mystic-btn warm-glow">
                         ✨ あなたらしさを見つめる
@@ -347,31 +363,17 @@ export const ResultPage: React.FC = () => {
                 </section>
             )}
 
-            {currentSection >= 4 && currentSection < 5 && reading.synergyInsight && (
-                <div className="next-button-container">
-                    <button onClick={handleNext} className="next-btn mystic-btn warm-glow">
-                        💖 最後の贈り物を受け取る
-                    </button>
-                </div>
-            )}
-
-            {/* Section 5: Synergy & Note Link */}
-            {currentSection >= 5 && reading.synergyInsight && (
+            {/* Section 5: Synergy & Note Link (Merged with Section 4) */}
+            {currentSection >= 4 && (
                 <section className="interpretation-section synergy-section fade-in">
-                    <h3 className="section-title">💖 あなただけへの言葉 💖</h3>
-                    <p className="synergy-text">{reading.synergyInsight}</p>
+                    {reading.synergyInsight && (
+                        <>
+                            <h3 className="section-title">💖 あなただけへの言葉 💖</h3>
+                            <p className="synergy-text">{reading.synergyInsight}</p>
+                        </>
+                    )}
 
-                    {/* 占い師からの最後のメッセージ */}
-                    <div className="final-blessing">
-                        <p className="blessing-text">
-                            このメッセージは、今日のあなたへの贈り物。<br />
-                            心に留め、明日への一歩を踏み出してください。
-                        </p>
-                        <p className="blessing-emoji">✨🌟💖🌟✨</p>
-                        <p className="hope-message">
-                            あなたの未来は、光に満ちています。
-                        </p>
-                    </div>
+
 
                     {/* noteへの導線 */}
                     <div className="note-link-container" style={{ marginTop: '2rem', textAlign: 'center' }}>
@@ -385,29 +387,20 @@ export const ResultPage: React.FC = () => {
                                 textDecoration: 'none',
                                 padding: '1.2rem 2rem',
                                 fontSize: '1.1rem',
-                                background: 'linear-gradient(135deg, #2d3436 0%, #000000 100%)',
-                                border: '1px solid rgba(255,255,255,0.2)'
+                                background: 'linear-gradient(135deg, #41C9B4 0%, #2D9C8E 100%)',
+                                border: '1px solid rgba(255,255,255,0.3)',
+                                color: '#ffffff',
+                                fontWeight: 'bold',
+                                boxShadow: '0 4px 15px rgba(65, 201, 180, 0.4)'
                             }}
                         >
-                            🔮 あなたのタイプの「来月の運勢」を見る (note)
+                            🔮 あなたのタイプの来月の運勢をnoteで見る
                         </a>
                         <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.8 }}>
                             ※より詳細な運勢とアドバイスをお届けします
                         </p>
                     </div>
                 </section>
-            )}
-
-            {/* Navigation - 最後まで表示したら */}
-            {currentSection >= 5 && (
-                <div className="actions fade-in">
-                    <button onClick={() => navigate('/select-spread')} className="secondary-btn">
-                        別のスプレッドで占う
-                    </button>
-                    <button onClick={() => navigate('/input')} className="primary-btn mystic-btn warm-glow">
-                        🌸 また新しい相談をする
-                    </button>
-                </div>
             )}
         </div>
     );

@@ -388,7 +388,7 @@
 /* カードキーワードポップアップ */
 .card-keyword-popup {
     position: absolute;
-    bottom: -32px;
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(207, 169, 102, 0.95);
@@ -502,7 +502,7 @@
     }
 
     .card-keyword-popup {
-        bottom: -28px;
+        bottom: -95px;
         padding: 3px 8px;
     }
 

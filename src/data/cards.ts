@@ -12,7 +12,8 @@ export const CARDS: CardDefinition[] = [
         keywords_upright: ["始まり", "自由", "可能性", "軽やかさ"],
         keywords_reversed: ["無計画", "浮つき", "見落とし", "躊躇"],
         domains: ["人生", "選択", "挑戦"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_00_fool.png"
     },
     {
         id: "MA_01",
@@ -23,7 +24,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["創造", "実行", "意志", "スキル"],
         keywords_reversed: ["空回り", "未熟", "悪用", "不器用"],
-        intensity: 4
+        intensity: 4,
+        image_path: "tarot_01_magician.png"
     },
     {
         id: "MA_02",
@@ -34,7 +36,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["直感", "洞察", "静寂", "知恵"],
         keywords_reversed: ["不信", "曖昧", "神経質", "批判"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_02_high_priestess.png"
     },
     {
         id: "MA_03",
@@ -45,7 +48,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["育む", "豊か", "母性", "成就"],
         keywords_reversed: ["過保護", "停滞", "浪費", "嫉妬"],
-        intensity: 4
+        intensity: 4,
+        image_path: "tarot_03_empress.png"
     },
     {
         id: "MA_04",
@@ -56,7 +60,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["統制", "責任", "権威", "安定"],
         keywords_reversed: ["硬直", "支配", "未熟", "横暴"],
-        intensity: 5
+        intensity: 5,
+        image_path: "tarot_04_emperor.png"
     },
     {
         id: "MA_05",
@@ -67,7 +72,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["伝統", "学び", "慈悲", "契約"],
         keywords_reversed: ["形式", "反発", "古い", "盲信"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_05_hierophant.png"
     },
     {
         id: "MA_06",
@@ -78,7 +84,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["選択", "調和", "情熱", "合意"],
         keywords_reversed: ["迷い", "不一致", "誘惑", "空回り"],
-        intensity: 4
+        intensity: 4,
+        image_path: "tarot_06_lovers.png"
     },
     {
         id: "MA_07",
@@ -89,7 +96,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["前進", "勝利", "克服", "行動"],
         keywords_reversed: ["暴走", "停滞", "敗北", "焦り"],
-        intensity: 5
+        intensity: 5,
+        image_path: "tarot_07_chariot.png"
     },
     {
         id: "MA_08",
@@ -100,7 +108,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["勇気", "しなやか", "忍耐", "制御"],
         keywords_reversed: ["消耗", "不安", "弱気", "自制不足"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_08_strength.png"
     },
     {
         id: "MA_09",
@@ -111,7 +120,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["内省", "探求", "孤独", "導き"],
         keywords_reversed: ["孤立", "閉塞", "偏屈", "無視"],
-        intensity: 2
+        intensity: 2,
+        image_path: "tarot_09_hermit.png"
     },
     {
         id: "MA_10",
@@ -122,7 +132,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["転機", "流れ", "チャンス", "宿命"],
         keywords_reversed: ["波乱", "抵抗", "下降", "すれ違い"],
-        intensity: 4
+        intensity: 4,
+        image_path: "tarot_10_wheel.png"
     },
     {
         id: "MA_11",
@@ -133,7 +144,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["公平", "判断", "因果", "均衡"],
         keywords_reversed: ["偏り", "曖昧", "不正", "優柔不断"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_11_justice.png"
     },
     {
         id: "MA_12",
@@ -144,7 +156,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["視点転換", "受容", "献身", "試練"],
         keywords_reversed: ["徒労", "固執", "犠牲", "我慢"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_12_hanged_man.png"
     },
     {
         id: "MA_13",
@@ -155,7 +168,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["区切り", "変化", "終焉", "再生"],
         keywords_reversed: ["先延ばし", "未練", "停滞", "恐れ"],
-        intensity: 5
+        intensity: 5,
+        image_path: "tarot_13_death.png"
     },
     {
         id: "MA_14",
@@ -166,7 +180,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["調整", "中庸", "癒し", "結合"],
         keywords_reversed: ["過不足", "乱れ", "浪費", "不調和"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_14_temperance.png"
     },
     {
         id: "MA_15",
@@ -177,7 +192,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["執着", "誘惑", "束縛", "欲望"],
         keywords_reversed: ["解放", "距離", "回復", "覚醒"],
-        intensity: 4
+        intensity: 4,
+        image_path: "tarot_15_devil.png"
     },
     {
         id: "MA_16",
@@ -188,7 +204,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["崩壊", "刷新", "衝撃", "啓示"],
         keywords_reversed: ["回避", "遅延", "緊迫", "誤解"],
-        intensity: 5
+        intensity: 5,
+        image_path: "tarot_16_tower.png"
     },
     {
         id: "MA_17",
@@ -199,7 +216,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["希望", "回復", "直感", "理想"],
         keywords_reversed: ["失望", "疑い", "高望み", "無気力"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_17_star.png"
     },
     {
         id: "MA_18",
@@ -210,7 +228,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["不安", "曖昧", "潜在意識", "予感"],
         keywords_reversed: ["露見", "整理", "解消", "現実"],
-        intensity: 3
+        intensity: 3,
+        image_path: "tarot_18_moon.png"
     },
     {
         id: "MA_19",
@@ -221,7 +240,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["明快", "成功", "活力", "喜び"],
         keywords_reversed: ["過信", "空回り", "延期", "陰り"],
-        intensity: 5
+        intensity: 5,
+        image_path: "tarot_19_sun.png"
     },
     {
         id: "MA_20",
@@ -232,7 +252,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["再起", "決断", "覚醒", "結果"],
         keywords_reversed: ["迷い", "保留", "後悔", "無視"],
-        intensity: 4
+        intensity: 4,
+        image_path: "tarot_20_judgement.png"
     },
     {
         id: "MA_21",
@@ -243,7 +264,8 @@ export const CARDS: CardDefinition[] = [
         rank: null,
         keywords_upright: ["完成", "統合", "成就", "完璧"],
         keywords_reversed: ["未完", "停滞", "妥協", "遅れ"],
-        intensity: 5
+        intensity: 5,
+        image_path: "tarot_21_world.png"
     },
 
     // --- Minor Arcana: Cups (14) ---
@@ -256,7 +278,8 @@ export const CARDS: CardDefinition[] = [
         rank: 1,
         keywords_upright: ["感情の芽", "喜び", "愛", "始まり"],
         keywords_reversed: ["停滞", "不安", "空虚", "溢れる"],
-        intensity: 3
+        intensity: 3,
+        image_path: "cups_ace.png"
     },
     {
         id: "CU_02",
@@ -267,7 +290,8 @@ export const CARDS: CardDefinition[] = [
         rank: 2,
         keywords_upright: ["結び", "共感", "パートナー", "調和"],
         keywords_reversed: ["ズレ", "依存", "不信", "別れ"],
-        intensity: 2
+        intensity: 2,
+        image_path: "cups_02.png"
     },
     {
         id: "CU_03",
@@ -278,7 +302,8 @@ export const CARDS: CardDefinition[] = [
         rank: 3,
         keywords_upright: ["祝福", "交流", "仲間", "楽しい"],
         keywords_reversed: ["気疲れ", "表面", "過剰", "孤立"],
-        intensity: 2
+        intensity: 2,
+        image_path: "cups_03.png"
     },
     {
         id: "CU_04",
@@ -289,7 +314,8 @@ export const CARDS: CardDefinition[] = [
         rank: 4,
         keywords_upright: ["倦怠", "様子見", "不満", "瞑想"],
         keywords_reversed: ["再興味", "受容", "動き", "気づき"],
-        intensity: 2
+        intensity: 2,
+        image_path: "cups_04.png"
     },
     {
         id: "CU_05",
@@ -300,7 +326,8 @@ export const CARDS: CardDefinition[] = [
         rank: 5,
         keywords_upright: ["喪失", "後悔", "悲しみ", "失望"],
         keywords_reversed: ["回復", "切替", "受容", "希望"],
-        intensity: 3
+        intensity: 3,
+        image_path: "cups_05.png"
     },
     {
         id: "CU_06",
@@ -311,7 +338,8 @@ export const CARDS: CardDefinition[] = [
         rank: 6,
         keywords_upright: ["懐かしさ", "純粋", "過去", "再会"],
         keywords_reversed: ["過去固執", "幼さ", "未来", "成長"],
-        intensity: 2
+        intensity: 2,
+        image_path: "cups_06.png"
     },
     {
         id: "CU_07",
@@ -322,7 +350,8 @@ export const CARDS: CardDefinition[] = [
         rank: 7,
         keywords_upright: ["選択肢", "幻想", "迷い", "夢"],
         keywords_reversed: ["現実化", "絞る", "目覚め", "決断"],
-        intensity: 2
+        intensity: 2,
+        image_path: "cups_07.png"
     },
     {
         id: "CU_08",
@@ -333,7 +362,8 @@ export const CARDS: CardDefinition[] = [
         rank: 8,
         keywords_upright: ["離れる", "転換", "放棄", "旅立ち"],
         keywords_reversed: ["未練", "停滞", "戻る", "躊躇"],
-        intensity: 3
+        intensity: 3,
+        image_path: "cups_08.png"
     },
     {
         id: "CU_09",
@@ -344,7 +374,8 @@ export const CARDS: CardDefinition[] = [
         rank: 9,
         keywords_upright: ["満足", "達成", "幸運", "誇り"],
         keywords_reversed: ["過剰", "空虚", "慢心", "不満"],
-        intensity: 3
+        intensity: 3,
+        image_path: "cups_09.png"
     },
     {
         id: "CU_10",
@@ -355,7 +386,8 @@ export const CARDS: CardDefinition[] = [
         rank: 10,
         keywords_upright: ["調和", "幸福", "家族", "平和"],
         keywords_reversed: ["理想疲れ", "不一致", "争い", "崩れ"],
-        intensity: 4
+        intensity: 4,
+        image_path: "cups_10.png"
     },
     {
         id: "CU_PAGE",
@@ -366,7 +398,8 @@ export const CARDS: CardDefinition[] = [
         rank: "page",
         keywords_upright: ["好意", "学び", "感受性", "メッセージ"],
         keywords_reversed: ["気分", "優柔", "甘え", "未熟"],
-        intensity: 2
+        intensity: 2,
+        image_path: "cups_page.png"
     },
     {
         id: "CU_KNIGHT",
@@ -377,7 +410,8 @@ export const CARDS: CardDefinition[] = [
         rank: "knight",
         keywords_upright: ["告白", "提案", "ロマンス", "接近"],
         keywords_reversed: ["誇張", "不実", "感情的", "逃避"],
-        intensity: 3
+        intensity: 3,
+        image_path: "cups_knight.png"
     },
     {
         id: "CU_QUEEN",
@@ -388,7 +422,8 @@ export const CARDS: CardDefinition[] = [
         rank: "queen",
         keywords_upright: ["包容", "共感", "直感", "優しさ"],
         keywords_reversed: ["情緒不安", "依存", "非現実", "感情的"],
-        intensity: 3
+        intensity: 3,
+        image_path: "cups_queen.png"
     },
     {
         id: "CU_KING",
@@ -399,7 +434,8 @@ export const CARDS: CardDefinition[] = [
         rank: "king",
         keywords_upright: ["成熟", "安定", "寛容", "助言"],
         keywords_reversed: ["抑圧", "冷め", "操作", "不機嫌"],
-        intensity: 4
+        intensity: 4,
+        image_path: "cups_king.png"
     },
 
     // --- Minor Arcana: Wands (14) ---
@@ -412,7 +448,8 @@ export const CARDS: CardDefinition[] = [
         rank: 1,
         keywords_upright: ["着火", "開始", "情熱", "意欲"],
         keywords_reversed: ["遅延", "迷い", "不発", "焦り"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_ace.png"
     },
     {
         id: "WA_02",
@@ -423,7 +460,8 @@ export const CARDS: CardDefinition[] = [
         rank: 2,
         keywords_upright: ["計画", "展望", "野心", "決定"],
         keywords_reversed: ["視野狭い", "恐れ", "迷い", "中止"],
-        intensity: 2
+        intensity: 2,
+        image_path: "wands_02.png"
     },
     {
         id: "WA_03",
@@ -434,7 +472,8 @@ export const CARDS: CardDefinition[] = [
         rank: 3,
         keywords_upright: ["進展", "拡大", "貿易", "成功"],
         keywords_reversed: ["停滞", "準備不足", "遅れ", "失望"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_03.png"
     },
     {
         id: "WA_04",
@@ -445,7 +484,8 @@ export const CARDS: CardDefinition[] = [
         rank: 4,
         keywords_upright: ["安堵", "節目", "平和", "歓迎"],
         keywords_reversed: ["落ち着かない", "延期", "不安定", "準備不足"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_04.png"
     },
     {
         id: "WA_05",
@@ -456,7 +496,8 @@ export const CARDS: CardDefinition[] = [
         rank: 5,
         keywords_upright: ["競争", "衝突", "議論", "切磋琢磨"],
         keywords_reversed: ["消耗", "回避", "内輪揉め", "複雑化"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_05.png"
     },
     {
         id: "WA_06",
@@ -467,7 +508,8 @@ export const CARDS: CardDefinition[] = [
         rank: 6,
         keywords_upright: ["勝利", "称賛", "進歩", "自信"],
         keywords_reversed: ["過信", "誤解", "遅れ", "不評"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_06.png"
     },
     {
         id: "WA_07",
@@ -478,7 +520,8 @@ export const CARDS: CardDefinition[] = [
         rank: 7,
         keywords_upright: ["防衛", "主張", "勇気", "優位"],
         keywords_reversed: ["弱気", "疲弊", "降伏", "不利"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_07.png"
     },
     {
         id: "WA_08",
@@ -489,7 +532,8 @@ export const CARDS: CardDefinition[] = [
         rank: 8,
         keywords_upright: ["急展開", "連絡", "速度", "変化"],
         keywords_reversed: ["遅れ", "混乱", "誤解", "停滞"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_08.png"
     },
     {
         id: "WA_09",
@@ -500,7 +544,8 @@ export const CARDS: CardDefinition[] = [
         rank: 9,
         keywords_upright: ["粘り", "警戒", "持久戦", "準備"],
         keywords_reversed: ["限界", "疑心", "頑固", "疲労"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_09.png"
     },
     {
         id: "WA_10",
@@ -511,7 +556,8 @@ export const CARDS: CardDefinition[] = [
         rank: 10,
         keywords_upright: ["過負荷", "責任", "重圧", "抱え込み"],
         keywords_reversed: ["手放す", "分担", "崩壊", "解放"],
-        intensity: 4
+        intensity: 4,
+        image_path: "wands_10.png"
     },
     {
         id: "WA_PAGE",
@@ -522,7 +568,8 @@ export const CARDS: CardDefinition[] = [
         rank: "page",
         keywords_upright: ["好奇心", "発信", "冒険", "吉報"],
         keywords_reversed: ["軽率", "飽き", "短気", "不満"],
-        intensity: 2
+        intensity: 2,
+        image_path: "wands_page.png"
     },
     {
         id: "WA_KNIGHT",
@@ -533,7 +580,8 @@ export const CARDS: CardDefinition[] = [
         rank: "knight",
         keywords_upright: ["突進", "挑戦", "情熱", "行動"],
         keywords_reversed: ["暴走", "短気", "中断", "無謀"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_knight.png"
     },
     {
         id: "WA_QUEEN",
@@ -544,7 +592,8 @@ export const CARDS: CardDefinition[] = [
         rank: "queen",
         keywords_upright: ["魅力", "自信", "快活", "自立"],
         keywords_reversed: ["嫉妬", "焦り", "わがまま", "威圧"],
-        intensity: 3
+        intensity: 3,
+        image_path: "wands_queen.png"
     },
     {
         id: "WA_KING",
@@ -555,7 +604,8 @@ export const CARDS: CardDefinition[] = [
         rank: "king",
         keywords_upright: ["統率", "推進", "カリスマ", "実行力"],
         keywords_reversed: ["独断", "圧", "横暴", "偏見"],
-        intensity: 4
+        intensity: 4,
+        image_path: "wands_king.png"
     },
 
     // --- Minor Arcana: Swords (14) ---
@@ -568,7 +618,8 @@ export const CARDS: CardDefinition[] = [
         rank: 1,
         keywords_upright: ["決断", "明晰", "勝利", "真実"],
         keywords_reversed: ["混乱", "誤解", "暴力", "失敗"],
-        intensity: 3
+        intensity: 3,
+        image_path: "swords_ace.png"
     },
     {
         id: "SW_02",
@@ -579,7 +630,8 @@ export const CARDS: CardDefinition[] = [
         rank: 2,
         keywords_upright: ["保留", "均衡", "静止", "拒絶"],
         keywords_reversed: ["優柔", "現実逃避", "再開", "不均衡"],
-        intensity: 2
+        intensity: 2,
+        image_path: "swords_02.png"
     },
     {
         id: "SW_03",
@@ -590,7 +642,8 @@ export const CARDS: CardDefinition[] = [
         rank: 3,
         keywords_upright: ["痛み", "別れ", "失望", "傷心"],
         keywords_reversed: ["回復", "受容", "混乱", "許し"],
-        intensity: 4
+        intensity: 4,
+        image_path: "swords_03.png"
     },
     {
         id: "SW_04",
@@ -601,7 +654,8 @@ export const CARDS: CardDefinition[] = [
         rank: 4,
         keywords_upright: ["休息", "回復", "隠遁", "待機"],
         keywords_reversed: ["焦燥", "消耗", "活動", "覚醒"],
-        intensity: 2
+        intensity: 2,
+        image_path: "swords_04.png"
     },
     {
         id: "SW_05",
@@ -612,7 +666,8 @@ export const CARDS: CardDefinition[] = [
         rank: 5,
         keywords_upright: ["強引", "勝ち負け", "利己", "略奪"],
         keywords_reversed: ["和解", "反省", "敗北", "後悔"],
-        intensity: 3
+        intensity: 3,
+        image_path: "swords_05.png"
     },
     {
         id: "SW_06",
@@ -623,7 +678,8 @@ export const CARDS: CardDefinition[] = [
         rank: 6,
         keywords_upright: ["移動", "改善", "旅立ち", "逃避"],
         keywords_reversed: ["停滞", "未整理", "困難", "戻る"],
-        intensity: 2
+        intensity: 2,
+        image_path: "swords_06.png"
     },
     {
         id: "SW_07",
@@ -634,7 +690,8 @@ export const CARDS: CardDefinition[] = [
         rank: 7,
         keywords_upright: ["策略", "用心", "裏切り", "知略"],
         keywords_reversed: ["露見", "正直", "相談", "自白"],
-        intensity: 3
+        intensity: 3,
+        image_path: "swords_07.png"
     },
     {
         id: "SW_08",
@@ -645,7 +702,8 @@ export const CARDS: CardDefinition[] = [
         rank: 8,
         keywords_upright: ["制限", "思い込み", "拘束", "孤立"],
         keywords_reversed: ["解放", "突破", "緩和", "解決"],
-        intensity: 3
+        intensity: 3,
+        image_path: "swords_08.png"
     },
     {
         id: "SW_09",
@@ -656,7 +714,8 @@ export const CARDS: CardDefinition[] = [
         rank: 9,
         keywords_upright: ["不安", "悪夢", "悩み", "不眠"],
         keywords_reversed: ["軽減", "整理", "希望", "回復"],
-        intensity: 4
+        intensity: 4,
+        image_path: "swords_09.png"
     },
     {
         id: "SW_10",
@@ -667,7 +726,8 @@ export const CARDS: CardDefinition[] = [
         rank: 10,
         keywords_upright: ["終局", "痛手", "裏切り", "破綻"],
         keywords_reversed: ["再生", "持ち直し", "最悪", "好転"],
-        intensity: 5
+        intensity: 5,
+        image_path: "swords_10.png"
     },
     {
         id: "SW_PAGE",
@@ -678,7 +738,8 @@ export const CARDS: CardDefinition[] = [
         rank: "page",
         keywords_upright: ["情報", "警戒", "分析", "偵察"],
         keywords_reversed: ["過敏", "噂", "嘘", "準備不足"],
-        intensity: 2
+        intensity: 2,
+        image_path: "swords_page.png"
     },
     {
         id: "SW_KNIGHT",
@@ -689,7 +750,8 @@ export const CARDS: CardDefinition[] = [
         rank: "knight",
         keywords_upright: ["直言", "突破", "迅速", "知性"],
         keywords_reversed: ["攻撃", "焦り", "辛辣", "無鉄砲"],
-        intensity: 3
+        intensity: 3,
+        image_path: "swords_knight.png"
     },
     {
         id: "SW_QUEEN",
@@ -700,7 +762,8 @@ export const CARDS: CardDefinition[] = [
         rank: "queen",
         keywords_upright: ["自立", "切る", "公正", "明晰"],
         keywords_reversed: ["冷徹", "孤立", "批判", "偏見"],
-        intensity: 3
+        intensity: 3,
+        image_path: "swords_queen.png"
     },
     {
         id: "SW_KING",
@@ -711,7 +774,8 @@ export const CARDS: CardDefinition[] = [
         rank: "king",
         keywords_upright: ["論理", "統治", "正義", "権威"],
         keywords_reversed: ["独善", "硬直", "冷酷", "悪用"],
-        intensity: 4
+        intensity: 4,
+        image_path: "swords_king.png"
     },
 
     // --- Minor Arcana: Pentacles (14) ---
@@ -724,7 +788,8 @@ export const CARDS: CardDefinition[] = [
         rank: 1,
         keywords_upright: ["現実化", "種", "繁栄", "機会"],
         keywords_reversed: ["機会逸す", "渋滞", "浪費", "不足"],
-        intensity: 3
+        intensity: 3,
+        image_path: "pentacles_ace.png"
     },
     {
         id: "PE_02",
@@ -735,7 +800,8 @@ export const CARDS: CardDefinition[] = [
         rank: 2,
         keywords_upright: ["両立", "調整", "柔軟", "変化"],
         keywords_reversed: ["破綻", "散漫", "圧倒", "硬直"],
-        intensity: 2
+        intensity: 2,
+        image_path: "pentacles_02.png"
     },
     {
         id: "PE_03",
@@ -746,7 +812,8 @@ export const CARDS: CardDefinition[] = [
         rank: 3,
         keywords_upright: ["技能", "協業", "評価", "計画"],
         keywords_reversed: ["手抜き", "不協", "未熟", "批判"],
-        intensity: 2
+        intensity: 2,
+        image_path: "pentacles_03.png"
     },
     {
         id: "PE_04",
@@ -757,7 +824,8 @@ export const CARDS: CardDefinition[] = [
         rank: 4,
         keywords_upright: ["守る", "保有", "安定", "執着"],
         keywords_reversed: ["浪費", "執着", "手放す", "強欲"],
-        intensity: 3
+        intensity: 3,
+        image_path: "pentacles_04.png"
     },
     {
         id: "PE_05",
@@ -768,7 +836,8 @@ export const CARDS: CardDefinition[] = [
         rank: 5,
         keywords_upright: ["不足", "不安", "貧困", "孤立"],
         keywords_reversed: ["支援", "改善", "回復", "希望"],
-        intensity: 4
+        intensity: 4,
+        image_path: "pentacles_05.png"
     },
     {
         id: "PE_06",
@@ -779,7 +848,8 @@ export const CARDS: CardDefinition[] = [
         rank: 6,
         keywords_upright: ["与える", "公平", "寛容", "共有"],
         keywords_reversed: ["偏り", "条件", "嫉妬", "偽善"],
-        intensity: 2
+        intensity: 2,
+        image_path: "pentacles_06.png"
     },
     {
         id: "PE_07",
@@ -790,7 +860,8 @@ export const CARDS: CardDefinition[] = [
         rank: 7,
         keywords_upright: ["評価", "待つ", "成長", "投資"],
         keywords_reversed: ["焦り", "見切り", "不満", "無駄"],
-        intensity: 2
+        intensity: 2,
+        image_path: "pentacles_07.png"
     },
     {
         id: "PE_08",
@@ -801,7 +872,8 @@ export const CARDS: CardDefinition[] = [
         rank: 8,
         keywords_upright: ["鍛錬", "継続", "職人", "集中"],
         keywords_reversed: ["マンネリ", "怠慢", "完璧主義", "徒労"],
-        intensity: 2
+        intensity: 2,
+        image_path: "pentacles_08.png"
     },
     {
         id: "PE_09",
@@ -812,7 +884,8 @@ export const CARDS: CardDefinition[] = [
         rank: 9,
         keywords_upright: ["自立", "実り", "優雅", "達成"],
         keywords_reversed: ["依存", "不安", "見栄", "孤独"],
-        intensity: 3
+        intensity: 3,
+        image_path: "pentacles_09.png"
     },
     {
         id: "PE_10",
@@ -823,7 +896,8 @@ export const CARDS: CardDefinition[] = [
         rank: 10,
         keywords_upright: ["基盤", "家系", "遺産", "繁栄"],
         keywords_reversed: ["重圧", "継承問題", "紛争", "損失"],
-        intensity: 4
+        intensity: 4,
+        image_path: "pentacles_10.png"
     },
     {
         id: "PE_PAGE",
@@ -834,7 +908,8 @@ export const CARDS: CardDefinition[] = [
         rank: "page",
         keywords_upright: ["学習", "計画", "真面目", "知らせ"],
         keywords_reversed: ["先延ばし", "不安", "怠惰", "無駄遣い"],
-        intensity: 2
+        intensity: 2,
+        image_path: "pentacles_page.png"
     },
     {
         id: "PE_KNIGHT",
@@ -845,7 +920,8 @@ export const CARDS: CardDefinition[] = [
         rank: "knight",
         keywords_upright: ["堅実", "積む", "責任感", "忍耐"],
         keywords_reversed: ["停滞", "頑固", "退屈", "無責任"],
-        intensity: 3
+        intensity: 3,
+        image_path: "pentacles_knight.png"
     },
     {
         id: "PE_QUEEN",
@@ -856,7 +932,8 @@ export const CARDS: CardDefinition[] = [
         rank: "queen",
         keywords_upright: ["養う", "実務", "豊かさ", "母性"],
         keywords_reversed: ["過干渉", "浪費", "不信", "依存"],
-        intensity: 3
+        intensity: 3,
+        image_path: "pentacles_queen.png"
     },
     {
         id: "PE_KING",
@@ -867,6 +944,7 @@ export const CARDS: CardDefinition[] = [
         rank: "king",
         keywords_upright: ["安定", "管理", "成功", "信頼"],
         keywords_reversed: ["保守", "支配", "強欲", "頑固"],
-        intensity: 4
+        intensity: 4,
+        image_path: "pentacles_king.png"
     },
 ];
